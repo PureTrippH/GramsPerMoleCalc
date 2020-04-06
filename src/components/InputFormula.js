@@ -78,6 +78,7 @@ class InputForm extends React.Component {
         <div>
             <form>
                 <h1>Grams Per Mole Calculator</h1>
+                <h5>Now With Numbers!</h5>
                  <InputForms id="InputFormVal" type="text" name="Formula" value={this.state.value} onChange={this.handleChange} placeholder="Chemical Formula" /> 
                  <FormBox text={this.state.element} />
              </form>
