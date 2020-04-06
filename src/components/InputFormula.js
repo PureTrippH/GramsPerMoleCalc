@@ -31,14 +31,20 @@ class InputForm extends React.Component {
   
   async handleChange(event) {
    await this.setState({value: event.target.value});
-    console.log(this.state.value);
     let stringing = this.state.value;
     let stringArr = (stringing.replace(/([A-Z])/g, ' $1').trim()).split(" ");
     let ans = [];
     for(let e in eleArray) {
       for(let i = 0 ; i < stringArr.length ; i++) {
-        console.log(stringArr);
-        if(stringArr[i] === eleArray[e].symbol) {
+        let testString = stringArr[i]
+        if(testString.replace(/[0-9]/g, '') === eleArray[e].symbol) {
+          let str = stringArr[i]
+            for (var int = 0; int < str.length; int++) {
+            let char = str.charAt(int);          
+            if(char >= '0' && char <= '9') {
+              ans.push(parseFloat(eleArray[e].atomic_mass)*(parseFloat(char)-1));
+            }
+          }
           ans.push(eleArray[e].atomic_mass);
           this.setState({element: ans.reduce((a, b) => a + b, 0)});
         } else {
@@ -49,7 +55,6 @@ class InputForm extends React.Component {
 
     calculateMol() {
       for(let e in eleArray) {
-        console.log(eleArray[e].name);
       /*  if(eleArray[e].symbol === this.state.value) {
           this.setState({
             value:  eleArray[e].atomic_mass
