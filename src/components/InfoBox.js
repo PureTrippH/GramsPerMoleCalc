@@ -15,7 +15,7 @@ function InfoBox(props) {
             <InfBox>
             <h4>How To Use</h4>
             <h6>Just enter the element you want to use: ex NH4. It will give you the grams per mole ratio.</h6>
-            <p>Ex: NH4 (NHHHH) - 18.039 grams / mol</p>
+            <p>Ex: NH4 (or NHHHH if you are used to the old version) - 18.039 grams / mol</p>
             </InfBox>
         </div>
     );
