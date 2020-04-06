@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/GramsPerMoleCalc/precache-manifest.90cface1b5ba8b015e5db1fcd121aa46.js"
+  "/GramsPerMoleCalc/precache-manifest.fdeaf96b50b4d6dc1cf30f2c85bebdd8.js"
 );
 
 self.addEventListener('message', (event) => {
