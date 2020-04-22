@@ -39,28 +39,23 @@ class InputForm extends React.Component {
         let testString = stringArr[i]
         if(testString.replace(/[0-9]/g, '') === eleArray[e].symbol) {
           let str = stringArr[i]
+          let numbArr = [];
             for (var int = 0; int < str.length; int++) {
-            let char = str.charAt(int);          
+            let char = str.charAt(int);   
+                
             if(char >= '0' && char <= '9') {
-              ans.push(parseFloat(eleArray[e].atomic_mass)*(parseFloat(char)-1));
+              numbArr.push(char);
             }
+          }
+          if(numbArr.length > 0) {
+            console.log(numbArr.join(''))
+            ans.push(parseFloat(eleArray[e].atomic_mass)*(parseFloat(numbArr.join(''))-1));
           }
           ans.push(eleArray[e].atomic_mass);
           this.setState({element: ans.reduce((a, b) => a + b, 0)});
         } else {
         }
       }
-    }
-    }
-
-    calculateMol() {
-      for(let e in eleArray) {
-      /*  if(eleArray[e].symbol === this.state.value) {
-          this.setState({
-            value:  eleArray[e].atomic_mass
-          });
-        }
-        */
     }
     }
 
@@ -79,7 +74,7 @@ class InputForm extends React.Component {
             <form>
                 <h1>Grams Per Mole Calculator</h1>
                 <h5>Now With Numbers!</h5>
-                 <InputForms id="InputFormVal" type="text" name="Formula" value={this.state.value} onChange={this.handleChange} placeholder="Chemical Formula" /> 
+                 <InputForms id="InputFormVal" type="text" name="CompoundOrMolecule" value={this.state.value} onChange={this.handleChange} placeholder="Chemical Formula" /> 
                  <FormBox text={this.state.element} />
              </form>
         </div>
