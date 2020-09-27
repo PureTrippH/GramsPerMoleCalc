@@ -1,5 +1,3 @@
--=This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)=-
-(<--- Saves me some time lmao <---)
 # GramsPerMoleCalc
 ### Start Date: (3-2-2020)
 ### End Date: (3-29-2020)
